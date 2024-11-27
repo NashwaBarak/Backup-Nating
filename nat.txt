@@ -1,0 +1,70 @@
+   HQ(config)#int g0/0.10
+   HQ(config-subif)#
+   HQ(config-subif)#int g0/0.20
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#int g0/0.30
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#int g0/0.40
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#ex
+   HQ(config)#
+   HQ(config)#int g0/2.10
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#int g0/2.20
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#int g0/2.30
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#int g0/2.40
+   HQ(config-subif)#ip nat inside
+   HQ(config-subif)#ex
+   HQ(config)#
+   HQ(config)#int g0/1
+   HQ(config-if)#ip nat inside
+   HQ(config-if)#ex
+   HQ(config)#int s0/0/0
+   HQ(config-if)#ip nat inside
+   HQ(config-if)#ex
+   HQ(config)#int s0/0/1
+   HQ(config-if)#ip nat inside
+   HQ(config-if)#ex
+   HQ(config)#int s0/1/0
+   HQ(config-if)#ip nat inside
+   HQ(config-if)#ex
+   HQ(config)#int s0/1/1
+   HQ(config-if)#ip nat inside
+   HQ(config-if)#ex
+   HQ(config)#int s0/2/0
+   HQ(config-if)#ip nat outside
+   HQ(config-if)#ex
+   HQ(config)#
+
+
+
+   HQ(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.20.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.30.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.40.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.50.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.60.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.70.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.80.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.90.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.100.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.110.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.120.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.130.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.140.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.150.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.160.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.170.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.180.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.190.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.200.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.210.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.220.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.230.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.240.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.245.0 0.0.0.255
+   HQ(config)#access-list 1 permit 192.168.250.0 0.0.0.255
+   HQ(config)#
+   HQ(config)#ip nat inside source list 1 int s0/2/0 overload
